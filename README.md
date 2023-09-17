@@ -5,7 +5,18 @@ Idea is based on: https://dev.to/bespoyasov/clean-architecture-on-frontend-4311
 # Todo
 - [ ] document the motivation to adopt this architecture
     - testability? should try to write test as well.
-- [ ] Implement Projects page
+- [/] Implement Tasks page
+    - show tasks in list table
+    - create task
+    - edit task
+    - delete task
+- [x] Implement Projects page
+    - show projects in list table
+    - create project
+        - basic
+        - assign user to project
+    - edit project
+    - delete project
 - [x] Implement login feature
     - Dashboard page 
     - Login feature
@@ -49,7 +60,6 @@ Idea is based on: https://dev.to/bespoyasov/clean-architecture-on-frontend-4311
     - description: string;
     - start_date: Date;
     - end_date: Date;
-    - use_task_progress: boolean;
     - created_at: Date;
     - updated_at: Date;
     - assignees: User[];
@@ -60,7 +70,6 @@ Idea is based on: https://dev.to/bespoyasov/clean-architecture-on-frontend-4311
     - description: string;
     - created_at: Date;
     - updated_at: Date;
-    - progress?: number;
     - assignees: User[];
 - User
     - id: number;

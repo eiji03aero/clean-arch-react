@@ -1,4 +1,5 @@
 import * as userDmn from '@/domain/User';
+import * as pjDmn from '@/domain/Project';
 import { Database } from '@/services/apis/db';
 
 export async function tryInsertSeeds() {
@@ -17,4 +18,20 @@ export async function tryInsertSeeds() {
     userDmn.createUser({ name: 'designer' }),
   ];
   await db.users.bulkAdd(users);
+
+  const projects = [
+    pjDmn.createProject({
+      title: 'Develop mobile app',
+      description: 'no time for sleep!',
+      startDate: new Date(2023, 8, 10),
+      endDate: new Date(2023, 8, 20),
+    }),
+    pjDmn.createProject({
+      title: 'Negotiate salary',
+      description: 'For the baby!',
+      startDate: new Date(2023, 7, 10),
+      endDate: new Date(2023, 8, 5),
+    }),
+  ];
+  await db.projects.bulkAdd(projects);
 }

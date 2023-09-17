@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Stack, Text, Heading } from '@chakra-ui/react';
 
 import { useLogin } from '@/application/usecases/useLogin';
-import { useUsers } from '@/services/queries/useUsers';
+import { useUsers } from '@/ui/modules/hooks/useUsers';
 import { UserCard } from '@/ui/views/Login/components/UserCard';
 
 export function LoginView() {

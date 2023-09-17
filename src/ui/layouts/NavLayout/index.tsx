@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Divider } from '@chakra-ui/react';
 import { Outlet, Link } from 'react-router-dom';
 
 import { useRestoreSession } from '@/application/usecases/useRestoreSession';
@@ -63,7 +63,11 @@ export function NavLayout() {
         <Box px={3} py={2} mb={2} color="white">
           React clean arch
         </Box>
+
+        <Divider />
+
         {renderNavItem({ href: '/', label: 'Top' })}
+        {renderNavItem({ href: '/projects', label: 'Projects' })}
 
         <Box flex={1} minHeight={0}></Box>
 
@@ -71,13 +75,14 @@ export function NavLayout() {
         {isLoggedIn && sessionStorage.currentUser && (
           <>
             {renderNavItem({ href: '#', onClick: logout, label: 'Logout' })}
+            <Divider />
             <Box px={3} py={2} mb={2} color="white">
               {sessionStorage.currentUser.name}
             </Box>
           </>
         )}
 
-        <Box py={4}></Box>
+        <Box py={2}></Box>
       </Box>
 
       <Box flex={1}>{renderContent()}</Box>
