@@ -7,6 +7,7 @@ import { AuthenticatedRoute } from './ui/modules/components/AuthenticatedRoute';
 import { LoginView } from './ui/views/Login';
 import { DashboardView } from './ui/views/Dashboard';
 import { ProjectsView } from './ui/views/Projects';
+import { TasksView } from './ui/views/Tasks';
 
 import './ui/styles/global.css';
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'projects',
         element: <AuthenticatedRoute element={<ProjectsView />} />,
+      },
+      {
+        path: 'tasks',
+        element: <AuthenticatedRoute element={<TasksView />} />,
       },
     ],
   },

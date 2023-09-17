@@ -3,9 +3,10 @@ Sample project to implement clean architecture in react.
 Idea is based on: https://dev.to/bespoyasov/clean-architecture-on-frontend-4311
 
 # Todo
+- [ ] Implement task thread feature
 - [ ] document the motivation to adopt this architecture
     - testability? should try to write test as well.
-- [/] Implement Tasks page
+- [x] Implement Tasks page
     - show tasks in list table
     - create task
     - edit task
@@ -68,6 +69,7 @@ Idea is based on: https://dev.to/bespoyasov/clean-architecture-on-frontend-4311
     - project_id: number;
     - title: string;
     - description: string;
+    - status: string;
     - created_at: Date;
     - updated_at: Date;
     - assignees: User[];

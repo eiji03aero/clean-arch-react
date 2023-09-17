@@ -1,5 +1,6 @@
 import * as userDmn from '@/domain/User';
 import * as pjDmn from '@/domain/Project';
+import * as taskDmn from '@/domain/Task';
 
 export interface AuthenticationService {
   login(id: UniqueId): Promise<userDmn.User>;
@@ -21,6 +22,21 @@ export interface ProjectsService {
 export interface UserProjectService {
   registerUsers(params: {
     projectId: number;
+    assigneeIds: number[];
+  }): Promise<void>;
+}
+
+export interface TasksService {
+  findAll(): Promise<taskDmn.Task[]>;
+  findById(id: UniqueId): Promise<taskDmn.Task | undefined>;
+  create(task: taskDmn.Task): Promise<UniqueId>;
+  update(task: taskDmn.Task): Promise<void>;
+  remove(id: UniqueId): Promise<void>;
+}
+
+export interface UserTaskService {
+  registerUsers(params: {
+    taskId: number;
     assigneeIds: number[];
   }): Promise<void>;
 }

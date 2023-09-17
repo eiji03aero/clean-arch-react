@@ -1,5 +1,6 @@
 import * as userDmn from '@/domain/User';
 import * as pjDmn from '@/domain/Project';
+import * as taskDmn from '@/domain/Task';
 import { Database } from '@/services/apis/db';
 
 export async function tryInsertSeeds() {
@@ -34,4 +35,20 @@ export async function tryInsertSeeds() {
     }),
   ];
   await db.projects.bulkAdd(projects);
+
+  const tasks = [
+    taskDmn.createTask({
+      projectId: 1,
+      status: 'not_started',
+      title: 'Research react native',
+      description: '',
+    }),
+    taskDmn.createTask({
+      projectId: 1,
+      status: 'not_started',
+      title: 'Research cordova',
+      description: '',
+    }),
+  ];
+  await db.tasks.bulkAdd(tasks);
 }

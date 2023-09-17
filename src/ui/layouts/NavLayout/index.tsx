@@ -68,6 +68,7 @@ export function NavLayout() {
 
         {renderNavItem({ href: '/', label: 'Top' })}
         {renderNavItem({ href: '/projects', label: 'Projects' })}
+        {renderNavItem({ href: '/tasks', label: 'Tasks' })}
 
         <Box flex={1} minHeight={0}></Box>
 
